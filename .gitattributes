@@ -1,0 +1,9 @@
+# Finales de línea LF para todo el texto (el código corre en SageMaker, Linux)
+* text=auto eol=lf
+
+# Archivos binarios: sin conversión
+*.png binary
+*.jpg binary
+*.gz binary
+*.tar.gz binary
+*.pkl binary
