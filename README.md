@@ -1,4 +1,4 @@
-# Airbnb Price Prediction — ML Pipeline en AWS SageMaker
+# Airbnb Santiago Price Prediction — ML Pipeline en AWS SageMaker
 
 Proyecto end-to-end para entender el ciclo de vida completo de un modelo de Machine Learning en AWS: desde datos crudos hasta un modelo entrenado, automatizado y con demo pública.
 
@@ -21,6 +21,35 @@ La prioridad del proyecto es **pilotear y entender cómo funciona el ciclo de ML
 - **Alerta de presupuesto** en AWS Budgets antes de crear cualquier recurso.
 - **Demo fuera de AWS:** Hugging Face Spaces, sin costo mensual.
 - **Costo medido y documentado:** el gasto real se registra con capturas de Cost Explorer como parte del resultado.
+
+## Dataset original
+
+| | |
+|---|---|
+| **Fuente** | [Inside Airbnb](http://insideairbnb.com/get-the-data/), archivo `listings.csv.gz` (versión detallada) |
+| **Ciudad** | Santiago de Chile |
+| **Snapshot** | Septiembre 2026 (último scraping: 26-09-2026) |
+| **Tamaño** | 10,7 MB comprimido |
+| **Filas** | **18.904** anuncios |
+| **Columnas** | **90** (37 decimales, 24 enteras, 29 de texto) |
+| **Variable objetivo** | `price`, precio por noche en pesos chilenos (CLP), en formato texto (`"$59,303.00"`) |
+
+**Qué contiene, por grupo de columnas:**
+
+| Grupo | Columnas | Ejemplos |
+|-------|---------:|----------|
+| Anfitrión | 28 | superanfitrión, identidad verificada, cantidad de anuncios |
+| Disponibilidad y noches | 16 | días disponibles al año, noches mínimas y máximas |
+| Reseñas | 14 | número de reseñas, puntajes, reseñas por mes |
+| Precio e ingresos | 7 | precio por noche, cotizaciones, ingreso estimado |
+| Propiedad, ubicación y otros | 25 | tipo de habitación, capacidad, dormitorios, comuna, coordenadas, URLs |
+
+**Estado de calidad al recibirlo:**
+- 14 columnas vienen **100 % vacías** (p. ej. `bathrooms`, `host_since`, `instant_bookable`).
+- 17 columnas tienen **más de 50 % de nulos**; solo 44 están completas.
+- El 4,8 % de los anuncios **no tiene precio**, y hay precios de hasta **97,5 millones CLP/noche**.
+
+Tras la limpieza quedaron **17.256 anuncios y 21 columnas** (91 % de los anuncios). Ver [hallazgos del EDA](docs/hallazgos_eda.md).
 
 ## Práctica: registro de decisiones
 
