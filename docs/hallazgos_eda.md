@@ -38,6 +38,8 @@ Después de la limpieza (CLP por noche):
 - Antes de limpiar, el **promedio (108 mil) era el doble de la mediana** por culpa de los outliers. Después de limpiar, el promedio es de 66 mil.
 - La distribución tiene **cola larga hacia la derecha**, con pocos anuncios muy caros. En escala logarítmica se ve casi simétrica, así que **predecir log(precio)** es una opción a evaluar en el modelo.
 
+Evidencia: [precios limpios](../images/eda/02_distribucion_precios_limpios.png)
+
 ## 4. La ubicación es clave
 
 - **El oriente es más caro**: Providencia (mediana de 66 mil), Las Condes (88 mil), Vitacura (118 mil) y Lo Barnechea (127 mil).
@@ -46,7 +48,7 @@ Después de la limpieza (CLP por noche):
 - **Hallazgo: los centros de ski.** En el mapa aparecía un grupo de anuncios en plena cordillera (Farellones, La Parva, Valle Nevado) con una mediana de unos 357 mil CLP. Es otro mercado, que depende de la temporada de ski, y **se excluyó** para que el modelo se enfoque en el mercado urbano.
 - **Efecto en la correlación:** antes de excluirlos, la longitud tenía una correlación de **0,70** con el precio. Después bajó a **0,33**. Gran parte de esa relación venía de la cordillera y no de la ciudad.
 
-Evidencia: [mapa antes](../images/eda/05_mapa_precios_osm.png) / [mapa después](../images/eda/06_mapa_precios_urbano.png)
+Evidencia: [mapa sin fondo](../images/eda/04_mapa_precios.png) / [mapa antes](../images/eda/05_mapa_precios_osm.png) / [mapa después](../images/eda/06_mapa_precios_urbano.png) / [correlación antes y después](../images/eda/07_correlacion_antes_despues.png)
 
 ## 5. Qué variables se relacionan con el precio
 
@@ -65,6 +67,7 @@ Correlación con el precio, sobre los datos finales:
 
 - **El tamaño (capacidad, dormitorios, camas) y la ubicación** son las variables más relacionadas.
 - **Las reseñas casi no se relacionan con el precio.** Un anuncio con muchas reseñas no es necesariamente más caro.
+- Evidencia: [relación con el precio, antes del corte](../images/eda/03_relacion_con_precio.png) / [correlación antes y después](../images/eda/07_correlacion_antes_despues.png)
 - La correlación solo mide relaciones **lineales**. XGBoost puede capturar relaciones más complejas, así que se conservan igual.
 
 ## 6. Tipo de habitación

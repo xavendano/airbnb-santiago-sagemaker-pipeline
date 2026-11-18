@@ -83,7 +83,35 @@ Inside Airbnb (CSV)
 
 Detalle completo: [docs/hallazgos_eda.md](docs/hallazgos_eda.md)
 
-![Mapa de precios](images/eda/06_mapa_precios_urbano.png)
+### Evidencia visual
+
+**1. Precios crudos.** Unos pocos valores de hasta 97 millones CLP/noche aplastan la escala; el boxplot logarítmico marca el corte en el percentil 99.
+
+![Distribución de precios crudos](images/eda/01_distribucion_precios.png)
+
+**2. Precios después de la limpieza.** Distribución con cola larga hacia la derecha; en escala logarítmica es casi simétrica.
+
+![Distribución de precios limpios](images/eda/02_distribucion_precios_limpios.png)
+
+**3. Relación con el precio (antes de excluir los centros de ski).** Correlaciones, precio mediano por comuna y por tipo de habitación.
+
+![Relación con el precio](images/eda/03_relacion_con_precio.png)
+
+**4. Ubicación de los anuncios.** La forma de Santiago aparece dibujada por los propios anuncios.
+
+![Mapa de precios sin fondo](images/eda/04_mapa_precios.png)
+
+**5. Mapa antes de excluir los centros de ski.** Arriba a la derecha, el grupo amarillo de Farellones, La Parva y Valle Nevado.
+
+![Mapa antes](images/eda/05_mapa_precios_osm.png)
+
+**6. Mapa después: solo Santiago urbano.**
+
+![Mapa después](images/eda/06_mapa_precios_urbano.png)
+
+**7. Efecto en la correlación.** Al excluir los centros de ski, la longitud baja de 0,70 a 0,33 y las variables de la propiedad (capacidad, dormitorios, baños) pasan a encabezar la lista.
+
+![Correlación antes y después](images/eda/07_correlacion_antes_despues.png)
 
 ## Resultados
 
