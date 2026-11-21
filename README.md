@@ -53,7 +53,7 @@ Tras la limpieza quedaron **17.256 anuncios y 21 columnas** (91 % de los anuncio
 
 ## Práctica: registro de decisiones
 
-Toda decisión relevante del proyecto (limpieza de datos, elección de variables, modelo, arquitectura, costos) se documenta en [docs/decisiones.md](docs/decisiones.md) con su fecha y su justificación.
+Toda decisión relevante del proyecto (limpieza de datos, elección de variables, modelo, arquitectura, costos) se documenta en [docs/decisiones.md](docs/decisiones.md) con su fecha y su justificación. Los resultados de cada entrenamiento se registran en [docs/experimentos.md](docs/experimentos.md).
 
 ## Arquitectura
 
@@ -91,7 +91,7 @@ Inside Airbnb (CSV)
 
 ```
 ├── data/          # Datos locales (no se suben a Git)
-├── notebooks/     # Exploración (Colab) y ejecución en SageMaker
+├── notebooks/     # Notebook de Colab (EDA, limpieza, modelos) y ejecución en SageMaker
 ├── src/           # Scripts: preprocess.py, pipeline, etc.
 ├── docs/          # Diagramas y registro de decisiones
 ├── images/        # Capturas de AWS
@@ -144,7 +144,9 @@ Detalle completo: [docs/hallazgos_eda.md](docs/hallazgos_eda.md)
 
 ## Resultados
 
-_Por completar: métricas (RMSE, MAE), comparación Colab vs SageMaker._
+Cada versión del modelo y sus métricas se registra en [docs/experimentos.md](docs/experimentos.md). Mejor resultado hasta ahora (v3, Colab): **MAE 13.017 CLP, RMSE 25.842 CLP, R² 0,675**.
+
+_Por completar: comparación Colab vs SageMaker._
 
 ## Costo real en AWS
 

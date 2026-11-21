@@ -30,3 +30,10 @@ venv/
 # Sistema
 .DS_Store
 Thumbs.db
+
+# Copias de respaldo de notebooks
+*.backup*.ipynb
+colab/
+
+# Modelos entrenados (se guardan en Drive / S3)
+modelos/
