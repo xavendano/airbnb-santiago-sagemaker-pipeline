@@ -144,7 +144,7 @@ Detalle completo: [docs/hallazgos_eda.md](docs/hallazgos_eda.md)
 
 ## Resultados
 
-Cada versión del modelo y sus métricas se registra en [docs/experimentos.md](docs/experimentos.md). Mejor resultado hasta ahora (v3, Colab): **MAE 13.017 CLP, RMSE 25.842 CLP, R² 0,675**.
+Cada versión del modelo y sus métricas se registra en [docs/experimentos.md](docs/experimentos.md). Modelo final de Colab (v5): **MAE 12.917 CLP, RMSE 25.725 CLP, R² 0,678**.
 
 _Por completar: comparación Colab vs SageMaker._
 
