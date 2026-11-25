@@ -2,7 +2,7 @@
 
 **Datos:** Inside Airbnb, Santiago de Chile, snapshot de septiembre 2026
 **Fecha del análisis:** 2026-11-18
-**Decisiones asociadas:** ver [decisiones.md](decisiones.md)
+**Decisiones asociadas:** Ver [decisiones.md](decisiones.md)
 
 ## 1. De 18.904 a 17.256 anuncios
 
@@ -22,8 +22,8 @@ Se conservó el **91 %** de los anuncios.
 
 - **14 columnas vienen 100 % vacías** en este snapshot de Santiago, entre ellas `bathrooms`, `host_since` e `instant_bookable`. `bathrooms` se recuperó desde `bathrooms_text`.
 - **El precio viene como texto** (`"$59,303.00"`) y en pesos chilenos. El 4,8 % de los anuncios no tiene precio.
-- **Hay precios absurdos**: hasta 97,5 millones CLP por noche, probablemente errores de carga o precios usados para bloquear el calendario.
-- **El 15 % de los anuncios no tiene reseñas.** No es un error: se marcó con la columna `sin_resenas`.
+- **Hay precios absurdos**: Hasta 97,5 millones CLP por noche, probablemente errores de carga o precios usados para bloquear el calendario.
+- **El 15 % de los anuncios no tiene reseñas.** No es un error: Se marcó con la columna `sin_resenas`.
 
 Evidencia: [distribución de precios](../images/eda/01_distribucion_precios.png)
 
@@ -45,12 +45,12 @@ Evidencia: [precios limpios](../images/eda/02_distribucion_precios_limpios.png)
 - **El oriente es más caro**: Providencia (mediana de 66 mil), Las Condes (88 mil), Vitacura (118 mil) y Lo Barnechea (127 mil).
 - **El sur y el poniente son más baratos**: Pedro Aguirre Cerda (22 mil), Lo Espejo (25 mil) y La Granja (26 mil).
 - **Santiago Centro concentra el 41 % de la oferta** (7.030 anuncios), con precios bajos.
-- **Hallazgo: los centros de ski.** En el mapa aparecía un grupo de anuncios en plena cordillera (Farellones, La Parva, Valle Nevado) con una mediana de unos 357 mil CLP. Es otro mercado, que depende de la temporada de ski, y **se excluyó** para que el modelo se enfoque en el mercado urbano.
-- **Efecto en la correlación:** antes de excluirlos, la longitud tenía una correlación de **0,70** con el precio. Después bajó a **0,33**. Gran parte de esa relación venía de la cordillera y no de la ciudad.
+- **Hallazgo: Los centros de ski.** En el mapa aparecía un grupo de anuncios en plena cordillera (Farellones, La Parva, Valle Nevado) con una mediana de unos 357 mil CLP. Es otro mercado, que depende de la temporada de ski, y **se excluyó** para que el modelo se enfoque en el mercado urbano.
+- **Efecto en la correlación:** Antes de excluirlos, la longitud tenía una correlación de **0,70** con el precio. Después bajó a **0,33**. Gran parte de esa relación venía de la cordillera y no de la ciudad.
 
 Evidencia: [mapa sin fondo](../images/eda/04_mapa_precios.png) / [mapa antes](../images/eda/05_mapa_precios_osm.png) / [mapa después](../images/eda/06_mapa_precios_urbano.png) / [correlación antes y después](../images/eda/07_correlacion_antes_despues.png)
 
-## 5. Qué variables se relacionan con el precio
+## 5. ¿Qué variables se relacionan con el precio?
 
 Correlación con el precio, sobre los datos finales:
 
@@ -84,5 +84,5 @@ El mercado está dominado por **departamentos completos**. Una habitación priva
 ## 7. Advertencias para el modelo
 
 - **Comunas con muy pocos anuncios** dan medianas poco confiables. Por ejemplo, La Pintana y San Ramón tienen **un solo anuncio** cada una. Las coordenadas (lat/lon) ayudan a compensarlo.
-- **Data leakage evitado:** se excluyeron `price_quote_*` y `estimated_revenue_l365d` porque se calculan a partir del precio.
-- **Pendiente:** convertir `room_type`, `property_type` y `neighbourhood_cleansed` a variables numéricas (one-hot encoding) antes de entrenar.
+- **Data leakage evitado:** Se excluyeron `price_quote_*` y `estimated_revenue_l365d` porque se calculan a partir del precio.
+- **Pendiente:** Convertir `room_type`, `property_type` y `neighbourhood_cleansed` a variables numéricas (one-hot encoding) antes de entrenar.

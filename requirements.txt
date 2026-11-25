@@ -1,3 +1,4 @@
+# Análisis y modelo (este repositorio)
 pandas
 numpy
 scikit-learn
@@ -5,6 +6,7 @@ xgboost
 matplotlib
 seaborn
 plotly
+
+# Próxima etapa: Despliegue en SageMaker
 boto3
 sagemaker
-gradio
