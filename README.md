@@ -84,6 +84,7 @@ Toda decisión relevante del proyecto (limpieza de datos, elección de variables
 │   └── experimentos.md                 # Registro de experimentos (v1-v6)
 ├── images/eda/                         # Gráficos del EDA
 ├── PLAN.md                             # Plan de trabajo
+├── LICENSE                             # Licencia MIT
 └── requirements.txt
 ```
 
@@ -203,7 +204,9 @@ pip install -r requirements.txt
 
 > Inside Airbnb publica snapshots nuevos cada pocos meses. Con otro snapshot las cifras van a variar un poco respecto de las de este README.
 
-## Créditos y licencia de los datos
+## Licencia y créditos
+
+El código de este repositorio se publica bajo la [licencia MIT](LICENSE).
 
 Los datos provienen de [Inside Airbnb](https://insideairbnb.com/), que los publica bajo la licencia [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). Este proyecto no está afiliado a Airbnb ni a Inside Airbnb.
 

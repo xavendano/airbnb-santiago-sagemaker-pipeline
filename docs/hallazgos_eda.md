@@ -85,4 +85,4 @@ El mercado está dominado por **departamentos completos**. Una habitación priva
 
 - **Comunas con muy pocos anuncios** dan medianas poco confiables. Por ejemplo, La Pintana y San Ramón tienen **un solo anuncio** cada una. Las coordenadas (lat/lon) ayudan a compensarlo.
 - **Data leakage evitado:** Se excluyeron `price_quote_*` y `estimated_revenue_l365d` porque se calculan a partir del precio.
-- **Pendiente:** Convertir `room_type`, `property_type` y `neighbourhood_cleansed` a variables numéricas (one-hot encoding) antes de entrenar.
+- **Resuelto:** `room_type`, `property_type` y `neighbourhood_cleansed` se convirtieron a variables numéricas con one-hot encoding antes de entrenar. Ver [decisiones.md](decisiones.md).

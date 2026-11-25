@@ -13,7 +13,7 @@ El plan está ordenado por fases, según lo que hay que hacer, y no tiene fechas
 - [x] Descargar `listings.csv.gz` de Santiago (Inside Airbnb) en `data/raw/`
 - [x] Anotar fecha del snapshot en `data/README.md` (septiembre 2026)
 - [x] EDA: Forma, nulos, distribución de `price`, outliers → [hallazgos](docs/hallazgos_eda.md)
-- [x] Crear repo en GitHub con `.gitignore` y README → [xavendano/airbnb-santiago-sagemaker-pipeline](https://github.com/xavendano/airbnb-santiago-sagemaker-pipeline) (privado)
+- [x] Crear repo en GitHub con `.gitignore` y README → [xavendano/airbnb-santiago-sagemaker-pipeline](https://github.com/xavendano/airbnb-santiago-sagemaker-pipeline)
 
 ## Fase 2 - Limpieza y modelo base en Colab ✅
 
